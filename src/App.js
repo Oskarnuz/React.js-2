@@ -1,15 +1,24 @@
 import CharacterCard from "./components/CharacterCard";
-
-import data from "./assets/data.json";
-
 import "./index.css";
+//import data from "./assets/data.json";
+import axios from "axios";
+
+import React, {useEffect, useState} from "react"
 
 function App() {
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    axios.get(`https://rickandmortyapi.com/api/character`)
+    .then((response) => {
+      setData(response.data.results)
+    })
+  }, [])
+
   return (
         
     <div className="app">
       <h1>Rick and Morty Characters</h1>
-      <h2>Your code here</h2>
 
       <div className="container">
 
