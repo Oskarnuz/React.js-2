@@ -1,4 +1,5 @@
 import CharacterCard from "./components/CharacterCard";
+
 import "./index.css";
 //import data from "./assets/data.json";
 import axios from "axios";
